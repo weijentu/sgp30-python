@@ -15,11 +15,11 @@ class SGP30Reading:
         self.total_voc = tvoc
 
     def __str__(self):
-        return """Air Quality:
-Equivalent C02: {: 5d} (ppm)
-Total VOC:      {: 5d} (ppb)
-""".format(self.equivalent_co2, self.total_voc)
-
+#        return """Air Quality:
+#Equivalent C02: {: 5d} (ppm)
+#Total VOC:      {: 5d} (ppb)
+#""".format(self.equivalent_co2, self.total_voc)
+        return "{{\"CO2\":{:d},\"VOC\":{:d}}}".format(self.equivalent_co2, self.total_voc)
 
 class SGP30:
     def __init__(self, i2c_dev=None, i2c_msg=None, i2c_addr=SGP30_I2C_ADDR):
